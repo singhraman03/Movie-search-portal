@@ -40,22 +40,22 @@
   opacity: 1;
 }
 
-.card__title {
+.cards__title {
   font-weight: 900;
   font-size: 1rem;
   margin-bottom: 0.4rem;
 }
 
-.card__runtime {
+.cards__runtime {
   font-size: .75rem;
   margin-bottom: 0.25rem;
 }
 
-.card__rating {
+.cards__rating {
   float: right;
 }
 
-.card__description {
+.cards__description {
   font-style: italic;
   font-size: .75rem;
   margin-bottom: 0.25rem;

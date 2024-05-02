@@ -1,12 +1,16 @@
 import React,{useState, useEffect} from "react";
-import Card from '../card/Card'
+import Cards from '../card/Card'
 import './Movielist.css'
 import { useParams } from "react-router-dom";
 
-const Movielist = () => {
+const Movielist = ({movie}) => {
 
   const[movielist, setMovielist] = useState([])
   const {type} = useParams()
+
+  useEffect(()=>{
+    getData()
+  },[])
   
 
   useEffect(()=>{
@@ -22,8 +26,8 @@ const Movielist = () => {
       <h2 className="list_title">{(type? type: "POPULAR").toUpperCase()}</h2>
       <div className="list_cards">
         {
-          movielist.map(movie => (
-            <Card key={movie.id} movie={movie} />
+          movielist && movielist.map(movie => (
+            <Cards  key={movie.id} movie={movie} />
           ))
         }
 

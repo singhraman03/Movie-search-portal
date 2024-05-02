@@ -16,20 +16,20 @@ const Card = ({movie}) => {
   {
     isLoading
     ?
-    <div className="Card">
+    <div className="cards">
       <SkeletonTheme color="#202020" highlightColor="#444">
         <Skeleton height={300} duration={2}/>
       </SkeletonTheme>
     </div>
     :
     <Link to={`movie/${movie.id}`} style={{textDecoration: "none", color:"white"}}>
-      <div className="Card">
-        <img className="Card_img" src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path: ""}`}/>
-        <div className="Card_overlay">
-          <div className="Card_title">{movie?movie.original_title:""}</div>
-          <div className="Card_runtime">
+      <div className="cards">
+        <img className="cards_img" src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path: ""}`}/>
+        <div className="cards_overlay">
+          <div className="cards_title">{movie?movie.original_title:""}</div>
+          <div className="cards_runtime">
             {movie?movie.release_date:""}
-            <span className="Card_rating"></span>
+            <span className="cards_rating"></span>
           </div>
         </div>
       </div>
@@ -37,3 +37,5 @@ const Card = ({movie}) => {
   }
   </>
 }
+
+export default Card
